@@ -4,22 +4,23 @@ public class EX04 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int age = 0;
+        boolean isValidAge = false;
 
         do {
-            System.out.print("Vui lòng nhập vào tuổi của bạn: ");
+            System.out.println("Moi ban nhap tuoi: ");
             if (input.hasNextInt()) {
                 age = input.nextInt();
-                if (age <= 0) {
-                    System.out.println("Vui lòng nhập vào một số nguyên và lớn hơn 0.");
+                if (age > 0) {
+                    isValidAge = true;
+                } else {
+                    System.out.println(" Vui lòng nhập vào một số nguyên và lớn hơn 0!");
                 }
             } else {
-                System.out.println("Vui lòng nhập vào một số nguyên và lớn hơn 0.");
+                System.out.println(" Vui lòng nhập vào một số nguyên  và lớn hơn 0!");
                 input.next();
             }
-        } while (age <= 0);
-
-        System.out.printf("Tuổi của bạn là %d !%n", age);
-
+        } while (!isValidAge);
+        System.out.println("Tuổi của bạn là: " + age);
         input.close();
     }
 }
